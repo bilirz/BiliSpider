@@ -82,4 +82,4 @@ while True:
         add_mid_to_db(int(mid), a.text, 'LePtC')
 
     cv_list = []
-    time.sleep(3600)
+    time.sleep(60)

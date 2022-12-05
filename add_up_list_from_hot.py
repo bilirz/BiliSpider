@@ -1,5 +1,7 @@
 from function import *
 
+num = 1
+
 while True:
 
     for page in range(1, 26):
@@ -10,4 +12,6 @@ while True:
                           info['owner']['name'],
                           f"hot - {info['aid']}")
         random_time_sleep(2, 3)
-    time.sleep(28800)
+    print(f"第{num}轮爬取完成，时间：{time.strftime('%Y-%m-%d %H:%M:%S')}")
+    count_time = 0
+    num += 1
