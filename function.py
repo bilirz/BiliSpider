@@ -22,11 +22,11 @@ def add_mid_to_db(mid: int, name: str, reason: str):
             'name': str(name),
             'reason': str(reason),
             'first_time': time.strftime('%Y-%m-%d %H:%M:%S'),
-            'data': {
+            'data': [{
                 'follower': 0,
                 'count_time': time.strftime('%Y-%m-%d %H:%M:%S'),
                 'time': time.strftime('%Y-%m-%d %H:%M:%S')
-            }
+            }]
             }
     if dbf.find_one({'mid': mid}) is None:
         # print(doct)
