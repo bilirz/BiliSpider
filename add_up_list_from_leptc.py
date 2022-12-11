@@ -8,12 +8,13 @@ cv_list = []
 
 while True:
     response_index = get_response(
-        'https://api.bilibili.com/x/polymer/web-dynamic/v1/feed/space?offset=&host_mid=300021061&timezone_offset=-480')
+        'https://api.bilibili.com/x/polymer/web-dynamic/v1/feed/space?offset=&host_mid=300021061&timezone_offset=-480',
+        is_proxy=False)
     response_json = json.loads(response_index.text)
     for cv in response_json['data']['items']:
         cv_list.append(cv['basic']['rid_str'])
 
-    response = get_response(f'https://www.bilibili.com/read/cv{cv_list[0]}')
+    response = get_response(f'https://www.bilibili.com/read/cv{cv_list[0]}', is_proxy=False)
     response_bs4 = BeautifulSoup(response.text, 'lxml')
 
     for i in range(5, 12):
