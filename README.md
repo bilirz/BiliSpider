@@ -1,6 +1,4 @@
 # 哔哩哔哩爬虫程序
 
-- 需要安装的库
-    - `pip install requests`
-    - `pip install pymongo`
-    - `pip install Beautifulsoup4`
+- 安装所需要的包
+    - `pip install -r requirements.txt`
