@@ -68,4 +68,4 @@ while True:
     response_json = json.loads(get_response('https://api.zeroroku.com/bilibili/live/rank?m=4320', is_proxy=False).text)
     for i in response_json:
         add_mid_to_db(int(i['mid']), i['name'], 'Jannchie')
-    random_time_sleep(1, 1)
+    time.sleep(60)
