@@ -18,21 +18,6 @@ while True:
         response = get_response(f'https://www.bilibili.com/read/cv{cv_list[0]}', is_proxy=False)
         response_bs4 = BeautifulSoup(response.text, 'lxml')
 
-        for i in range(5, 12):
-            a = response_bs4.select(f'#read-article-holder > p:nth-child({i}) > a')[0]
-            mid = re.sub('[^0-9]', '', a.get('href'))
-            add_mid_to_db(int(mid), a.text, 'LePtC')
-
-        for i in range(1, 7):
-            a = response_bs4.select(f'#read-article-holder > ul:nth-child(15) > li:nth-child({i}) > a')[0]
-            mid = re.sub('[^0-9]', '', a.get('href'))
-            add_mid_to_db(int(mid), a.text, 'LePtC')
-
-        for i in range(1, 7):
-            a = response_bs4.select(f'#read-article-holder > ul:nth-child(17) > li:nth-child({i}) > a')[0]
-            mid = re.sub('[^0-9]', '', a.get('href'))
-            add_mid_to_db(int(mid), a.text, 'LePtC')
-
         for i in range(1, 61):
             a = response_bs4.select(f'#read-article-holder > ol:nth-child(30) > li:nth-child({i}) > a')[0]
             mid = re.sub('[^0-9]', '', a.get('href'))
